@@ -17,6 +17,12 @@ module BancoReg
 );
 
     reg [31:0] Banreg [0:31];     //Banco de registro
+	
+	initial
+	begin  
+		#100;
+			$readmemb("Datos.txt", Banreg); 
+	end 
 
     always @(*) begin
         DataReg1 = Banreg[Reg1];
