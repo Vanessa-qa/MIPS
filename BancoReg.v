@@ -29,9 +29,11 @@ module BancoReg
         DataReg2 = Banreg[Reg2];
     end
 
-    always @(posedge RegEn) begin
-        Banreg[WriteAddr] <= Data;
-    end
+    always @(*) begin
+		if (RegEn) begin
+			Banreg[WriteAddr] = Data;
+		end
+	end
 
 endmodule
 	
