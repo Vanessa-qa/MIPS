@@ -30,10 +30,10 @@ module BancoReg
     end
 
     always @(*) begin
-		if (RegEn) begin
-			Banreg[WriteAddr] = Data;
-		end
-	end
+        if (RegEn == 1) begin
+            Banreg[WriteAddr] = Data;
+        end
+    end
 
 endmodule
 	
